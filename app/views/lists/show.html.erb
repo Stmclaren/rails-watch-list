@@ -1,5 +1,13 @@
 <h1><%= @list.name %> </h1>
 
+<%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
 
+<div class="cards">
+   <% @list.bookmarks.each do |bookmark| %>
+  <div class="card-category"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)" >
+  <div class="card-text"><%= bookmark.comment %></div>
+  </div>
+  <% end %>
+</div>
 
 <%= link_to 'Back to all lists', lists_path %>
